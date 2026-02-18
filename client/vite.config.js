@@ -5,7 +5,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    // Proxy /api requests to the NestJS backend during local development
     proxy: {
       '/api': 'http://localhost:3000',
     },

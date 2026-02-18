@@ -1,15 +1,11 @@
 {
-  "name": "guestbook-app",
-  "version": "1.0.0",
-  "private": true,
-  "description": "Full-stack Guestbook App — React + NestJS + Supabase",
-  "scripts": {
-    "install:all": "cd backend && npm install && cd ../frontend && npm install",
-    "dev:backend": "cd backend && npm run start:dev",
-    "dev:frontend": "cd frontend && npm run dev",
-    "build:backend": "cd backend && npm run build",
-    "build:frontend": "cd frontend && npm run build",
-    "build": "npm run build:backend && npm run build:frontend",
-    "vercel-build": "cd backend && npm install && npm run build && cd ../frontend && npm install && npm run build"
-  }
+    "name": "guestbook-app",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Full-stack Guestbook app — React + NestJS + Supabase",
+    "scripts": {
+        "dev:client": "cd client && npm run dev",
+        "dev:server": "cd server && npm run start:dev",
+        "install:all": "cd client && npm install && cd ../server && npm install"
+    }
 }

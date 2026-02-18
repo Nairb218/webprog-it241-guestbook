@@ -1,4 +1,10 @@
-// This thin wrapper loads the compiled NestJS app and exports it
-// as a Vercel serverless function handler.
-const app = require('../backend/dist/main');
-module.exports = app.default;
+// Vercel Serverless Function entry point
+// Loads the compiled NestJS app and exports the Express server as the handler
+const { server, createNestServer } = require('../server/dist/main');
+
+// Initialize NestJS on the Express instance
+createNestServer(server)
+  .then(() => console.log('NestJS ready for Vercel'))
+  .catch((err) => console.error('NestJS init error', err));
+
+module.exports = server;
