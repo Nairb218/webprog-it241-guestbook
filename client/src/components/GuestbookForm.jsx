@@ -36,7 +36,7 @@ export default function GuestbookForm({ onEntryAdded }) {
 
     return (
         <div className="form-card">
-            <h2>✍️ Sign the Guestbook</h2>
+            <h2>Sign the guestbook</h2>
 
             {error && <div className="error-message">{error}</div>}
 

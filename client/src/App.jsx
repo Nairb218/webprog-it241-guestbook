@@ -13,8 +13,8 @@ function App() {
   return (
     <>
       <header className="app-header">
-        <h1>Guestbook</h1>
-        <p>World would appreciate kind words</p>
+        <h1>Nairb's Guestbook</h1>
+        <p>World would appreciate your kind words</p>
       </header>
 
       <GuestbookForm onEntryAdded={handleEntryAdded} />

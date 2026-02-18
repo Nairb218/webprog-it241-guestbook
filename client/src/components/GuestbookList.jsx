@@ -40,7 +40,7 @@ export default function GuestbookList({ refreshKey }) {
         return (
             <div className="loading">
                 <div className="spinner" />
-                <p>Loading entries...</p>
+                <p>Wait loading...</p>
             </div>
         );
     }
