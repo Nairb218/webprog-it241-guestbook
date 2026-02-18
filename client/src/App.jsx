@@ -14,7 +14,7 @@ function App() {
     <>
       <header className="app-header">
         <h1>Guestbook</h1>
-        <p>Leave a message for everyone to see</p>
+        <p>World would appreciate kind words</p>
       </header>
 
       <GuestbookForm onEntryAdded={handleEntryAdded} />
