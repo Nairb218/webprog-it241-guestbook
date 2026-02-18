@@ -1,15 +1,26 @@
 // Vercel Serverless Function entry point
-// Loads the compiled NestJS app and exports the Express server as the handler
 const { server, createNestServer } = require('../server/dist/main');
 
-// Initialize NestJS on the Express instance
-(async () => {
-  try {
-    await createNestServer(server);
-    console.log('NestJS ready for Vercel');
-  } catch (err) {
-    console.error('NestJS init error', err);
-  }
-})();
+let initialized = false;
+let initPromise = null;
 
-module.exports = server;
+function ensureInit() {
+  if (!initPromise) {
+    initPromise = createNestServer(server)
+      .then(() => {
+        initialized = true;
+        console.log('NestJS ready for Vercel');
+      })
+      .catch((err) => {
+        initPromise = null; // allow retry
+        console.error('NestJS init error', err);
+        throw err;
+      });
+  }
+  return initPromise;
+}
+
+module.exports = async (req, res) => {
+  await ensureInit();
+  return server(req, res);
+};

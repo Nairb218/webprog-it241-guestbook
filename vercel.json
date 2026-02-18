@@ -1,5 +1,9 @@
 {
   "version": 2,
+  "env": {
+    "SUPABASE_URL": "https://gmmocqkvblagdbtgbuzz.supabase.co",
+    "SUPABASE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdtbW9jcWt2YmxhZ2RidGdidXp6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEzODkwNDYsImV4cCI6MjA4Njk2NTA0Nn0._Jfd-rvZHsLcfPlmc8lt9XVrJAm7BI86-Q1SVj5FBbI"
+  },
   "buildCommand": "cd server && npm install && npm run build && cd ../client && npm install && npm run build",
   "outputDirectory": "client/dist",
   "functions": {
