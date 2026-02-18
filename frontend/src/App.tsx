@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import './App.css';
 
 function App() {
   const [posts, setPosts] = useState<any[]>([]);
@@ -26,8 +27,9 @@ function App() {
   }, []);
 
   return (
-    <div style={{ maxWidth: '600px', margin: 'auto' }}>
+    <div className="App">
       <h1>Guestbook</h1>
+      <p className="sub-headline">World would appreciate kind words</p>
 
       <form onSubmit={submitPost}>
         <input
@@ -42,13 +44,13 @@ function App() {
           onChange={(e) => setMessage(e.target.value)}
           required
         />
-        <button type="submit">Submit</button>
+        <button type="submit">Post Entry</button>
       </form>
 
       <hr />
 
       {posts.map((post) => (
-        <div key={post.id}>
+        <div className="post" key={post.id}>
           <h3>{post.name}</h3>
           <p>{post.message}</p>
           <small>{new Date(post.created_at).toLocaleString()}</small>
